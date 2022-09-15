@@ -6,4 +6,4 @@ Systema operativo basado en MicroPython
 
 ## Descripción
 
-Es un pequeño sistema operativo basado en MicroPython versión 1.18. La documentación oficial puede consultarse en la [wiki del proyecto]([../wiki](https://github.com/alekay2200/uPyOS/wiki))
+Es un pequeño sistema operativo basado en MicroPython versión 1.18. La documentación oficial puede consultarse en la [wiki del proyecto](https://github.com/alekay2200/uPyOS/wiki)
