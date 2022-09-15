@@ -1,9 +1,9 @@
 # uPyOS
-Operative System for MicroPython
+Systema operativo basado en MicroPython
 
-## Tested on
+## Probado en
 - ESP32 (MicroPython v1.18)
 
-## Description
+## Descripción
 
-This is a tiny operative system for MicroPython, the system.py file is the main module. You will be able to create a system object in order to control displays, views, inputs, internet connections, socket tasks, mqtt tasks, create timers and more.
+Es un pequeño sistema operativo basado en MicroPython versión 1.18. La documentación oficial puede consultarse en la [wiki del proyecto](../wiki)
