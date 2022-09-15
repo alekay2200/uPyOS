@@ -1,3 +1,6 @@
+# Author = Alejandro Palomino
+# Created = May 10, 2022
+
 from _thread import start_new_thread, exit as t_exit
 from micropython import const
 

@@ -1,3 +1,6 @@
+# Author = Alejandro Palomino
+# Created = March 28, 2022
+
 from network import WLAN, STA_IF
 from time import time, localtime
 from input.abstract_input import Input
