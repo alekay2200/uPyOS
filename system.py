@@ -51,20 +51,6 @@ class __Timer:
 
 class System_Manager:
 
-    # ---- Properties of system manager ---- #
-    # __instance = None  # propertie to store the unique instance of System_Manager
-    # __wifi = None # Wifi connection object
-    # __display = None # Display object
-    # __inputs = [None for i in range(35)] # List[Input]
-    # __timers = [None,None,None,None] # List[__Timer] list of ids of the timers, on esp32 there are timers from 0 to 3 both includes
-    # __controller = None # Controller to manage transition from views
-    # __socket = Union[None, socket]
-    # __mqtt_client = MQTTClient 
-    # __notifiers = List[Notifier]
-    # __timezone = int
-    # __signals = Set[int]
-
-
     def __init__(self, ssid: str = None, password: str = None, stack_size_KiB: float = 0, timezone: int = 0):
         stack_size(int(stack_size_KiB * 1024))
         self.__wifi = None # Wifi connection object
@@ -76,14 +62,14 @@ class System_Manager:
         self.__socket = None # socket to use on the socket_task
         self.__socket_thread = None # variable to store thread of the socket in order to stop on the future
         self.__lock = allocate_lock() # Lock to syncronize threads
-        self.__mqtt_client = None
-        self.__mqtt_thread = None
-        self.__mqtt_subscriber_callback = None
-        self.__mqtt_notify_when_message_receive = False
-        self.__notifiers = list()
-        self.__timezone = timezone
-        self.__signals = {SIG_SLEEP, SIG_WAKEUP}
-        self.__sleeping = False
+        self.__mqtt_client = None # instance to save mqtt client connection
+        self.__mqtt_thread = None # thread that controll the mqtt process
+        self.__mqtt_subscriber_callback = None # Function to call when subscriber task of mqtt is initialized
+        self.__mqtt_notify_when_message_receive = False 
+        self.__notifiers = list() # List of notifiers in the system
+        self.__timezone = timezone # [int] Timezone
+        self.__signals = {SIG_SLEEP, SIG_WAKEUP} # System signals
+        self.__sleeping = False # Flag to know if the system is sleeping or not
 
         # Enable wifi
         if ssid is not None and password is not None: self.init_wifi(ssid, password)
